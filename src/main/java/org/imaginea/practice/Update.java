@@ -14,19 +14,19 @@ public class Update {
     	Scanner sc = new Scanner(System.in);
         Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/test", "root", "root");
         System.out.println("connected..."+con.getClass());
-        /*System.out.println("enter the row no. to update : ");
+        System.out.println("enter the row no. to update : ");
         int rno = sc.nextInt();
         System.out.println("enter modified details : ");
         String name = sc.next();
     	int id = sc.nextInt();
-    	String branch = sc.next();*/
+    	String branch = sc.next();
         Statement st = con.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE,ResultSet.CONCUR_UPDATABLE);
         String s1 = "select name,id,branch from students";
         ResultSet rs = st.executeQuery(s1);
-        rs.absolute(1);
-        rs.updateString(1, "sai");
-        rs.updateInt(2, 125);
-        rs.updateString(3, "cse");
+        rs.absolute(rno);
+        rs.updateString(1, name);
+        rs.updateInt(2, id);
+        rs.updateString(3, branch);
         rs.updateRow();
 	}
 }
