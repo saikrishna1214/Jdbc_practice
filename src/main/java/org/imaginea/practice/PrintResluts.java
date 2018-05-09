@@ -9,10 +9,8 @@ import java.sql.Statement;
 import java.util.Scanner;
 
 public class PrintResluts {
-	public static void main(String a[]) throws SQLException
+	public void results(Connection con) throws SQLException
 	{
-        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/test", "root", "root");
-        System.out.println("connected..."+con.getClass());
         String s1 = "select *from students";
         Statement st = con.createStatement();
         ResultSet rs = st.executeQuery(s1);

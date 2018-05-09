@@ -10,12 +10,10 @@ import java.util.Scanner;
  */
 public class InsertDetails 
 {
-    public static void main( String[] args ) throws SQLException
+    public void insert(Connection con) throws SQLException
     {
     	PreparedStatement ps;
     	Scanner sc = new Scanner(System.in);
-        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/test", "root", "root");
-        System.out.println("connected..."+con.getClass());
         String s2 = "insert into students values(?,?,?)";
         ps = con.prepareStatement(s2);
         System.out.println("enter no. of students: ");

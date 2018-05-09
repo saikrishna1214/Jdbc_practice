@@ -9,11 +9,9 @@ import java.sql.Statement;
 import java.util.Scanner;
 
 public class Update {
-	public static void main(String a[]) throws SQLException
+	public void updateTable(Connection con) throws SQLException
 	{
     	Scanner sc = new Scanner(System.in);
-        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/test", "root", "root");
-        System.out.println("connected..."+con.getClass());
         System.out.println("enter the row no. to update : ");
         int rno = sc.nextInt();
         System.out.println("enter modified details : ");

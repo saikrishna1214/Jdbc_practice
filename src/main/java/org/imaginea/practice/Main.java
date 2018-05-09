@@ -12,7 +12,7 @@ public class Main {
 		Update u = new Update();
 		PrintResluts p = new PrintResluts();
 		CreateTable c = new CreateTable();
-		ConnectionUtils cn = new ConnectionUtils();
+		ConnectionUtil cn = new ConnectionUtil();
 		Connection con = cn.getConnection();
 		System.out.println("enter: 1.to create table \n 2. to insert details \n 3. to update \n 4. to print results \n 5. to exit");
 		while(true)
