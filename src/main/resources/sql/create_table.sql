@@ -1,0 +1,1 @@
+create table students (name varchar(20),id numeric(10) primarykey unique notnull,branch varchar(20));
