@@ -4,13 +4,27 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.Scanner;
 /**
+ * This code is used to call a method for a respective operation on 
+ * database. getConnection of ConnectionUtil method is called to establish
+ * connection to database. 
  * 
  * @author saikrishnak
  * 
- * 
- *
  */
 public class Main {
+	
+	/**
+	 * objects for all the classes are created and initialized for respective
+	 * operations. 
+	 * options for operations are given and they should be entered as input
+	 * in an endless while loop. switch case will call respective methods by 
+	 * using case labels. and control will come out from while loop if exit 
+	 * option is chosen.
+	 * 
+	 * @param args
+	 * @throws SQLException
+	 * @throws IOException
+	 */
 	
 	public static void main(String args[]) throws SQLException, IOException
 	{

@@ -8,7 +8,31 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Scanner;
 
+/**
+ * 
+ * this code will update the data in a row 
+ * absolute() method moves pointer to respective row and update
+ * operation is done to it.
+ * 
+ * @author saikrishnak
+ *
+ */
+
 public class Update {
+	
+	/**
+	 * 
+	 * Prepared statement will take values dynamically (at run time) Creates a 
+	 * PreparedStatement object for sending parameterized SQL statements to the database.
+	 * @id is taken as input from scanner class and setInt() will go to respective row
+	 * executeUpdate() will execute the SQL statement. 
+	 * row number is taken as input to update the given row.
+	 * updateString(), updateInt() methods of ResultSet updates the row. 
+	 * 
+	 * @param con
+	 * @throws SQLException
+	 */
+	
 	public void updateTable(Connection con) throws SQLException
 	{
     	Scanner sc = new Scanner(System.in);
