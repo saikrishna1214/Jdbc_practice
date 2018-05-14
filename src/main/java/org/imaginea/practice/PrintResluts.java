@@ -20,32 +20,44 @@ import java.util.Scanner;
 public class PrintResluts {
 	
 	/**
-	 * 
-	 * SQL statement is passed to executeQuery method of Statement class
-	 * which will return Object of ResultSet type. 
-	 * next() Moves the cursor forward one row from its current position. 
-	 * A ResultSet cursor is initially positioned before the first row 
-	 * the first call to the method next makes the first row the current row; 
-	 * the second call makes the second row the current row, and so on.
-	 * When a call to the next method returns false, the cursor is positioned
-	 *  after the last row.
-	 * 
-	 * @param con
-	 * @throws SQLException
-	 */
+    * SQL statement is passed to executeQuery method of Statement class
+    * which will return Object of ResultSet type. 
+    * @param con gets connection from database.
+	* @throws SQLException
+	*/
 	
-	public void results(Connection con) throws SQLException
+	public boolean results(Connection con) throws SQLException
 	{
         String s1 = "select *from students";
+        
         Statement st = con.createStatement();
+        
+        /**
+         * SQL statement is passed to executeQuery method of Statement class
+         * which will return Object of ResultSet type. 
+         */
+      
         ResultSet rs = st.executeQuery(s1);
-        while(rs.next())
+        boolean temp;
+        
+        /**
+         * next() Moves the cursor forward one row from its current position. 
+         *
+         * When a call to the next method returns false, the cursor is positioned
+         *  after the last row.
+         */
+        
+        while(temp=rs.next())
         {
         	System.out.print(rs.getRow()+"  ");
-        	System.out.print(rs.getString(1)+"  ");
+        	
+        	/*prints data in each row */
+        	
         	System.out.print(rs.getInt(2)+"  ");
         	System.out.print(rs.getString(3));
         	System.out.println();
         }
+        /* returns false if all rows are printed */
+        return temp;
 	}
 }

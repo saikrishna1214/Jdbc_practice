@@ -43,15 +43,21 @@ public class Main {
 			switch(n)
 			{
 			case 1:	
-				i.insert(con);
+				System.out.println("no. of rows inserted is "+i.insert(con));
 				break;
 			case 2:
-				u.updateTable(con);
+				if(u.updateTable(con))
+				{
+					System.out.println("given row is updated");
+				}
+				else
+					System.out.println("given row is not there in table");
 				break;
 			case 3:
 				p.results(con);
 			case 4:
-				d.delete(con);
+				int rowsdeleted = d.delete(con);
+				System.out.println("no. of rows deleted is "+rowsdeleted);
 			}
 			if(n==5)
 				break;

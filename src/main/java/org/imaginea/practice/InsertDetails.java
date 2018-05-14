@@ -27,7 +27,7 @@ public class InsertDetails
 	 * @param con
 	 * @throws SQLException
 	 */
-    public void insert(Connection con) throws SQLException
+    public int insert(Connection con) throws SQLException
     {
     	PreparedStatement ps;
     	Scanner sc = new Scanner(System.in);
@@ -35,6 +35,7 @@ public class InsertDetails
         ps = con.prepareStatement(s2);
         System.out.println("enter no. of students: ");
         int n = sc.nextInt();
+        int m=0;
         while(n-->0)
         {
         	System.out.println("enter student details(name,id,branch) in order: ");
@@ -46,5 +47,6 @@ public class InsertDetails
         	ps.setString(3, branch);
         	ps.executeUpdate();
         }
+        return m;
     }
 }

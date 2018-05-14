@@ -24,15 +24,23 @@ public class DeleteData {
 	 * @throws SQLException
 	 */
 	
-	public void delete(Connection con) throws SQLException
+	public int delete(Connection con) throws SQLException
 	{
+		
 		Scanner sc = new Scanner(System.in);
+		
 		String s1 = "delete from students where id=?";
+		
 		PreparedStatement ps = con.prepareStatement(s1);
+		
 		System.out.println("enter the student id to delete : ");
+		
 		int id = sc.nextInt();
+		
 		ps.setInt(1,id);
-		ps.executeUpdate();
+		
+		return ps.executeUpdate();
+		
 	}
 	
 }

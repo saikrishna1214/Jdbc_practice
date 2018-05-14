@@ -6,6 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -17,7 +18,6 @@ import java.util.Scanner;
  * @author saikrishnak
  *
  */
-
 public class Update {
 	
 	/**
@@ -33,8 +33,9 @@ public class Update {
 	 * @throws SQLException
 	 */
 	
-	public void updateTable(Connection con) throws SQLException
+	public boolean updateTable(Connection con) throws SQLException
 	{
+		
     	Scanner sc = new Scanner(System.in);
         System.out.println("enter the row no. to update : ");
         int rno = sc.nextInt();
@@ -50,5 +51,6 @@ public class Update {
         rs.updateInt(2, id);
         rs.updateString(3, branch);
         rs.updateRow();
+        return rs.first();
 	}
 }

@@ -44,6 +44,7 @@ public class ConnectionUtil {
 		pwd = System.getProperty("pwd");
 		if(host == null||port == null||dbname == null||user == null||pwd == null)
 		{
+			/* takes values from properties file */
 				InputStream ip = getClass().getClassLoader().getResourceAsStream("config.properties");
 				if(ip != null)
 				{
